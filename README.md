@@ -2,9 +2,8 @@
 
 Chat-app project implementing Typescript, React and NodeJs.
 
-## NodeJs API
+## NodeJs API - Descriptions
 
-## Description
 This project will implement a repository pattern, and an ORM DB (Sequelize).
 
 Use the package manager npm (https://nodejs.org/es/download/) to install the API.
