@@ -2,7 +2,7 @@
 
 Chat-app project implementing Typescript, React and NodeJs.
 
-## NodeJs API - Descriptions
+## NodeJs API (chat-api) - Description
 
 This project will implement a repository pattern, and an ORM DB (Sequelize).
 
@@ -26,3 +26,5 @@ npm install
 
 - [sequelize-typescript](https://www.npmjs.com/package/awilix) - Decorators and some other features for sequelize (v6).
 
+
+## React TS (chat-app) - Description
