@@ -15,7 +15,7 @@ npm install
 
 ### Main dependencies used
 
-- awilix (https://www.npmjs.com/package/awilix) - Extremely powerful Dependency Injection (DI) container for JavaScript/Node, written in TypeScript.
+- [awilix](https://www.npmjs.com/package/awilix) - Extremely powerful Dependency Injection (DI) container for JavaScript/Node, written in TypeScript.
 
 - awilix-express [https://www.npmjs.com/package/awilix-express] - Awilix helpers, router and scope-instantiating middleware for Express.
 
