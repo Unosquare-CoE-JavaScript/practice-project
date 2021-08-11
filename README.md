@@ -43,7 +43,7 @@ npm run start:dev
 - - Main usage: used in migrations and seeders.
 
 - [cls-hooked](https://www.npmjs.com/package/cls-hooked) - Used for Sequelize-Transactions (Can be removed in the future).
-- - Main usage: used to handle transactions on sequelized.
+- - Main usage: used to handle transactions in sequelize.
 
 - [sequelize-typescript](https://www.npmjs.com/package/sequelize-typescript) - Decorators and some other features for sequelize (v6).
 
