@@ -20,11 +20,11 @@ npm install
 
 - [sequelize](https://www.npmjs.com/package/sequelize) - A promise-based Node.js ORM tool for Postgres, MySQL, MariaDB, SQLite and Microsoft SQL Server. It features solid transaction support, relations, eager and lazy loading, read replication and more.
 
-- [sequelize-cli](https://www.npmjs.com/package/awilix) - Extremely powerful Dependency Injection (DI) container for JavaScript/Node, written in TypeScript.
+- [sequelize-cli](https://www.npmjs.com/package/sequelize-cli) - The Sequelize Command Line Interface (CLI).
 
 - [cls-hooked](https://www.npmjs.com/package/cls-hooked) - Used for Sequelize-Transactions (Can be removed on future).
 
-- [sequelize-typescript](https://www.npmjs.com/package/awilix) - Decorators and some other features for sequelize (v6).
+- [sequelize-typescript](https://www.npmjs.com/package/sequelize-typescript) - Decorators and some other features for sequelize (v6).
 
 
 ## React TS (chat-app) - Description
