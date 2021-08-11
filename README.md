@@ -16,10 +16,16 @@ Architecture:
 
 - Database layer: Sequelize has support for PostgreSQL, MySQL, MariaDB, SQLite, and Microsoft SQL Server databases. In this project we will use MySQL. 
 
-Use the package manager npm (https://nodejs.org/es/download/) to install the API dependencies.
+Use the package manager npm (https://nodejs.org/es/download/) to install the API dependencies if are not installed.
 
 ```bash
 npm install
+```
+
+Use the following command to run the project.
+
+```bash
+npm run start:dev
 ```
 
 ### Main dependencies used
@@ -41,5 +47,6 @@ npm install
 
 - [sequelize-typescript](https://www.npmjs.com/package/sequelize-typescript) - Decorators and some other features for sequelize (v6).
 
+- [ts-node-dev](https://www.npmjs.com/package/ts-node-dev) - It restarts target node process when any of required files changes (as standard node-dev) but shares Typescript compilation process between restarts.
 
 ## React TS (chat-app) - Description
