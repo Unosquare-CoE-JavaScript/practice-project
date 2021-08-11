@@ -22,7 +22,7 @@ npm install
 
 - [sequelize-cli](https://www.npmjs.com/package/sequelize-cli) - The Sequelize Command Line Interface (CLI).
 
-- [cls-hooked](https://www.npmjs.com/package/cls-hooked) - Used for Sequelize-Transactions (Can be removed on future).
+- [cls-hooked](https://www.npmjs.com/package/cls-hooked) - Used for Sequelize-Transactions (Can be removed in the future).
 
 - [sequelize-typescript](https://www.npmjs.com/package/sequelize-typescript) - Decorators and some other features for sequelize (v6).
 
