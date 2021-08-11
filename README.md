@@ -10,16 +10,22 @@ Architecture:
 ![Screen Shot 2021-08-11 at 9 12 27 (2)](https://user-images.githubusercontent.com/84348769/129049076-52f56243-fa1c-4395-ac05-cb9762bbf1ac.jpg)
 - Controllers layer: Here are the API access routes.
 
-- Services layer: Here is the bussiness logic. Example: join/leave a chat-room, send a message/file etc.
+- Services layer: Here is the bussiness logic. Example: join/leave a chat-room, send a message, upload a file etc.
 
 - Data access layer: This layer is divided on 2, the Entities or Models here are declared all the Sequelize Models and Object Interfaces used in the project, and the Repositories which is in charge to do all the DB queries.
 
 - Database layer: Sequelize has support for PostgreSQL, MySQL, MariaDB, SQLite, and Microsoft SQL Server databases. In this project we will use MySQL. 
 
-Use the package manager npm (https://nodejs.org/es/download/) to install the API dependencies.
+Use the package manager npm (https://nodejs.org/es/download/) to install the API dependencies if are not installed.
 
 ```bash
 npm install
+```
+
+Use the following command to run the project.
+
+```bash
+npm run start:dev
 ```
 
 ### Main dependencies used
@@ -37,9 +43,10 @@ npm install
 - - Main usage: used in migrations and seeders.
 
 - [cls-hooked](https://www.npmjs.com/package/cls-hooked) - Used for Sequelize-Transactions (Can be removed in the future).
-- - Main usage: used to handle transactions on sequelized.
+- - Main usage: used to handle transactions in sequelize.
 
 - [sequelize-typescript](https://www.npmjs.com/package/sequelize-typescript) - Decorators and some other features for sequelize (v6).
 
+- [ts-node-dev](https://www.npmjs.com/package/ts-node-dev) - It restarts target node process when any of required files changes (as standard node-dev) but shares Typescript compilation process between restarts.
 
 ## React TS (chat-app) - Description
