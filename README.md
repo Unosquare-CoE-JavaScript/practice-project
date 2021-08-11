@@ -10,7 +10,7 @@ Architecture:
 ![Screen Shot 2021-08-11 at 9 12 27 (2)](https://user-images.githubusercontent.com/84348769/129049076-52f56243-fa1c-4395-ac05-cb9762bbf1ac.jpg)
 - Controllers layer: Here are the API access routes.
 
-- Services layer: Here is the bussiness logic. Example: join/leave a chat-room, send a message/file etc.
+- Services layer: Here is the bussiness logic. Example: join/leave a chat-room, send a message, upload a file etc.
 
 - Data access layer: This layer is divided on 2, the Entities or Models here are declared all the Sequelize Models and Object Interfaces used in the project, and the Repositories which is in charge to do all the DB queries.
 
