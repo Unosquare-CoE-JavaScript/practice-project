@@ -16,7 +16,7 @@ Architecture:
 
 - Database layer: Sequelize has support for PostgreSQL, MySQL, MariaDB, SQLite, and Microsoft SQL Server databases. In this project we will use MySQL. 
 
-Use the package manager npm (https://nodejs.org/es/download/) to install the API.
+Use the package manager npm (https://nodejs.org/es/download/) to install the API dependencies.
 
 ```bash
 npm install
