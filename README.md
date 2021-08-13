@@ -7,7 +7,8 @@ Chat-app project implementing Typescript, React and NodeJs.
 This project will implement a repository pattern, and an ORM DB (Sequelize). The main purpose of this project is implement a chat-api, that can handle multilpe chat-rooms and file sharing in these. (Features could be added in the future).
 
 Architecture:
-![Screen Shot 2021-08-11 at 9 12 27 (2)](https://user-images.githubusercontent.com/84348769/129049076-52f56243-fa1c-4395-ac05-cb9762bbf1ac.jpg)
+![Diseño sin título](https://user-images.githubusercontent.com/84348769/129381239-1daaf663-8c7b-4b9d-9058-dc66829746df.png)
+
 - Controllers layer: Here are the API access routes.
 
 - Services layer: Here is the bussiness logic. Example: join/leave a chat-room, send a message, upload a file etc.
