@@ -1,6 +1,6 @@
-import { UserGender } from '../../../common/enums/user.gender';
+import { UserGender } from "../src/common/enums/user.gender";
 
-export interface UserAttributes {
+export interface userDTO {
 	id: number;
 	firstName: string;
 	middleName: string | null;

@@ -1,17 +1,17 @@
-process.env.NODE_ENV = process.env.NODE_ENV || "development";
-process.env.APP_ENV = process.env.APP_ENV || "development";
+process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+process.env.APP_ENV = process.env.APP_ENV || 'development';
 
 //ENV FILES
-import * as dotenv from "dotenv";
+import * as dotenv from 'dotenv';
 
 dotenv.config({
-  path: `${__dirname}/../config/${process.env.APP_ENV}.env`,
+  path: `${__dirname}/../config/${process.env.APP_ENV}.env`
 });
 
-import express = require("express");
-import { loadControllers } from "awilix-express";
-import loadContainer from "./container";
-import { sequelize } from "./common/persistence/sequelize.persistence";
+import express = require('express');
+import { loadControllers } from 'awilix-express';
+import loadContainer from './container';
+import { sequelize } from './common/persistence/sequelize.persistence';
 
 // import jwt = require('express-jwt');
 
@@ -33,7 +33,7 @@ loadContainer(app);
 // }
 
 // Load Controllers
-app.use(loadControllers("controllers/*.ts", { cwd: __dirname }));
+app.use(loadControllers('controllers/*.ts', { cwd: __dirname }));
 
 //Sync Sequelize Models
 (async () => {

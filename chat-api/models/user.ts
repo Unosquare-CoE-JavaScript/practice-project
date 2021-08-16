@@ -9,25 +9,28 @@ interface UserCreationAttributes extends Optional<UserAttributes, 'id'> {}
 @Table
 export class User extends Model<UserAttributes, UserCreationAttributes> {
 
-    @Column 
-    firstName!: string;
+	@Column 
+	firstName!: string;
 
-    @Column 
-    middleName?: string;
+	@Column 
+	middleName?: string;
 
-    @Column
-    firstLastName!: string;
+	@Column
+	firstLastName!: string;
 
-    @Column
-    secondLastName?: string;
+	@Column
+	secondLastName?: string;
 
-    @Column
-    phoneNumber!: string;
+	@Column
+	phoneNumber!: string;
 
-    @Column
-    birthDate!: Date;
+	@Column
+	birthDate!: Date;
 
-    @Column(DataType.ENUM('Male', 'Female', 'Other'))
-    gender!: UserGender;
+	@Column(DataType.ENUM('Male', 'Female', 'Other'))
+	gender!: UserGender;
+
+	@Column 
+	password!: string;
 
 }
