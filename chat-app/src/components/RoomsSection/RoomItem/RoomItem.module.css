@@ -1,0 +1,22 @@
+.item{
+    cursor: pointer;
+    padding:10px;
+}
+
+.item:hover{
+    background-color: #ebe6e6;
+}
+
+.logo{
+    width: 35px;
+    height: 35px;
+}
+
+.title{
+    font-size: 20px;
+    margin: 5px 10px 5px 10px;
+}
+
+.itemContainer{
+    display: flex;
+}

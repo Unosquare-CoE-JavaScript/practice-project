@@ -1,0 +1,9 @@
+.chatContainer{
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    /*Chan change in futures commits*/
+    position: relative;
+}
