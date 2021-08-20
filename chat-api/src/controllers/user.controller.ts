@@ -5,7 +5,7 @@ import { Request, Response } from 'express';
 import { userDTO } from '../../DTOs/userDTO';
 const bcrypt = require('bcrypt');
 
-@route('/users')
+@route(`/api/v${process.env.API_VERSION}/users`)
 export class SystemUserController extends BaseController {
 	constructor(private readonly userService: UserService) {
 		super();
@@ -48,6 +48,7 @@ export class SystemUserController extends BaseController {
 				gender,
 				password: hashed_password
 			} as userDTO);
+			console.log(newUser);
 			res.send({createdUser: newUser});
 		} catch (e) {
 			this.handleException(e, res);

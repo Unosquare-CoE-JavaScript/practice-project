@@ -8,8 +8,6 @@ export class UserSequelizeRepository implements UserRepository {
 	}
 
 	public async add(newUser: userDTO): Promise<User | null> {
-		const createdUser = await User.create(newUser);
-		console.log(createdUser);
-		return createdUser;
+		return await User.create(newUser);
 	}
 }
