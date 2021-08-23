@@ -65,16 +65,4 @@ export const messagesList:Array<Message> =[
         TimeStamp:new Date(),
         Color:'yellow'
     }
-    // ,
-    // {
-    //     MessageID:4,
-    //     RoomID:2,
-    //     UserID:3,
-    //     UserName:"Hugo", // me
-    //     ToUserID:null,
-    //     Text:"Hi!",
-    //     TimeStamp:new Date(),
-    //     Color:'yellow'
-    // }
-
 ]

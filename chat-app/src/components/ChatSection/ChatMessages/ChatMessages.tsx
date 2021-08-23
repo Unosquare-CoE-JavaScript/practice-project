@@ -14,7 +14,7 @@ const ChatMessages:React.FC<{messages:Array<Message>}> = (props) => {
             <div className={styles.messagesContainer}>
                 {
                     props.messages.map(item =>
-                        <MessageBox message={item} income={item.UserID !== userID}/>
+                        <MessageBox key={item.MessageID} message={item} income={item.UserID !== userID}/>
                     )
                 }
             </div>

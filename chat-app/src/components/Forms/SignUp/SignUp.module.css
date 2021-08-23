@@ -1,0 +1,51 @@
+.formBox{
+    width: 80vw;
+    height: 40vw;
+    padding: 1rem;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background-color: #f5f0f0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    height: 13%;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1%;
+}
+.input{
+    width: 37%;
+    height: 70%;
+    max-height: 50px;
+    padding: 0 5% 0 5%;
+    border-radius: 25px;
+    border:0;
+    font-size: 0.9rem;
+}
+.input:focus, .selectInput:focus{
+    outline: none;
+}
+.link{
+    color: #31BED6;
+    text-decoration: none;
+}
+.link:hover{
+    cursor: pointer;
+}
+.selectInput{
+    width: 47%;
+    height: 70%;
+    max-height: 50px;
+    padding: 0 0 0 5%;
+    border-radius: 25px;
+    border:0;
+    font-size: 0.9rem;
+}
+.text{
+    font-size: 0.7rem;
+}

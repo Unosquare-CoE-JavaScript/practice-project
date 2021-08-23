@@ -1,5 +1,13 @@
+.disabled{
+    background-color: grey !important;
+    border-radius: 25px;
+}
+.active {
+    background-color: #31BED6;
+    border-radius: 25px;
 
-.btn {
+}
+.button{
     color: #FFF;
     transition: all 0.5s;
     position: relative;
@@ -9,16 +17,18 @@
     height: 5rem;
     max-height: 50px;
     max-width: 250px;
+
+}
+.buttonDisabled{
+    cursor: not-allowed;
+}
+
+.buttonActive {
     cursor: pointer;
-    border-radius: 25px;
 }
 
-.container {
-    background-color: #31BED6;
-    border-radius: 25px;
 
-}
-.btn::before {
+.buttonActive::before {
     content: '';
     position: absolute;
     top: 0;
@@ -29,11 +39,11 @@
     background-color: rgba(255,255,255,0.1);
     transition: all 0.3s;
 }
-.btn:hover::before {
+.buttonActive:hover::before {
     opacity: 0 ;
     transform: scale(0.5,0.5);
 }
-.btn::after {
+.buttonActive::after {
     content: '';
     position: absolute;
     top: 0;
@@ -47,7 +57,7 @@
     border-radius: 25px;
 
 }
-.btn:hover::after {
+.buttonActive:hover::after {
     opacity: 1;
     transform: scale(1,1);
 }
