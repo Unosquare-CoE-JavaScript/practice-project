@@ -1,18 +1,16 @@
 import { Optional } from 'sequelize';
-import { Table, Model, Column, DataType } from 'sequelize-typescript';
+import { Table, Model, Column, DataType, Unique } from 'sequelize-typescript';
 import { UserGender } from '../src/common/enums/user.gender';
 import { UserAttributes } from '../src/services/repositories/domain/user';
-
 
 interface UserCreationAttributes extends Optional<UserAttributes, 'id'> {}
 
 @Table
 export class User extends Model<UserAttributes, UserCreationAttributes> {
-
-	@Column 
+	@Column
 	firstName!: string;
 
-	@Column 
+	@Column
 	middleName?: string;
 
 	@Column
@@ -20,6 +18,10 @@ export class User extends Model<UserAttributes, UserCreationAttributes> {
 
 	@Column
 	secondLastName?: string;
+
+	@Unique
+	@Column
+	email!: string;
 
 	@Column
 	phoneNumber!: string;
@@ -30,7 +32,6 @@ export class User extends Model<UserAttributes, UserCreationAttributes> {
 	@Column(DataType.ENUM('Male', 'Female', 'Other'))
 	gender!: UserGender;
 
-	@Column 
+	@Column
 	password!: string;
-
 }

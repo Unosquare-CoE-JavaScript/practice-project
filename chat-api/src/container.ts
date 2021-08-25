@@ -7,6 +7,7 @@ import { MessageSequelizeRepository } from './services/repositories/impl/message
 import { RoomSequelizeRepository } from './services/repositories/impl/room.repository';
 
 import { UserService } from './services/user.service';
+import { AuthService } from './services/auth.service';
 import { TestService } from './services/test.service';
 
 export default (app: express.Application): void => {
@@ -19,6 +20,7 @@ export default (app: express.Application): void => {
 
 		// Services
 		userService: asClass(UserService).scoped(),
+		authService: asClass(AuthService).scoped(),
 		testService: asClass(TestService).scoped(),
 	});
 	app.use(scopePerRequest(container));

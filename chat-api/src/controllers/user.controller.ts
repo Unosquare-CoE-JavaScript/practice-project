@@ -3,7 +3,7 @@ import { BaseController } from '../common/controllers/base.controller';
 import { UserService } from '../services/user.service';
 import { Request, Response } from 'express';
 import { userDTO } from '../../DTOs/userDTO';
-const bcrypt = require('bcrypt');
+import jwt, { Secret } from 'jsonwebtoken';
 
 @route(`/api/v${process.env.API_VERSION}/users`)
 export class SystemUserController extends BaseController {
@@ -27,31 +27,27 @@ export class SystemUserController extends BaseController {
 	@POST()
 	private async add(req: Request, res: Response) {
 		try {
-			const {
-				firstName,
-				middleName,
-				firstLastName,
-				secondLastName,
-				phoneNumber,
-				birthDate,
-				gender,
-				password,
-			} = req.body;
-			let hashed_password = await bcrypt.hash(password, 12)
-			const newUser = await this.userService.add({
-				firstName,
-				middleName,
-				firstLastName,
-				secondLastName,
-				phoneNumber,
-				birthDate,
-				gender,
-				password: hashed_password
-			} as userDTO);
-			console.log(newUser);
-			res.send({createdUser: newUser});
+			const newUser = await this.userService.add(req.body as userDTO);
+			res.send({ createdUser: newUser });
 		} catch (e) {
 			this.handleException(e, res);
+		}
+	}
+
+	@route('/me')
+	@GET()
+	private async me(req: Request, res: Response) {
+		console.log('geting me');
+		try {
+			const decoded = jwt.verify(
+				req.cookies[process.env.COOKIE_NAME as string],
+				process.env.jwt_secret_key as Secret
+			);
+			console.log('decoded', decoded);
+			return res.send(decoded);
+		} catch (err) {
+			console.log(err);
+			res.send(null);
 		}
 	}
 }

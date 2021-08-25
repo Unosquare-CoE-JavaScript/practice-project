@@ -7,6 +7,10 @@ export class UserSequelizeRepository implements UserRepository {
 		return await User.findByPk(userID);
 	}
 
+	public async findByEmail(userEmail: string): Promise<User | null> {
+		return await User.findOne({ where: { email: userEmail } });
+	}
+
 	public async add(newUser: userDTO): Promise<User | null> {
 		return await User.create(newUser);
 	}

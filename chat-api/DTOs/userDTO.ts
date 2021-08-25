@@ -6,6 +6,7 @@ export interface userDTO {
 	middleName: string | null;
 	firstLastName: string;
 	secondLastName: string | null;
+	email: string;
 	phoneNumber: string;
 	birthDate: Date;
 	gender: UserGender;
