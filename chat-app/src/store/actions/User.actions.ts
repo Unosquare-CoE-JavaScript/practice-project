@@ -1,9 +1,12 @@
 export const SET_USER_DATA = "SET_USER_DATA";
+export const SIGN_IN_USER = "SIGN_IN_USER";
 
-export const setUserData = (roomID: number, roomName: string) => {
+export const signInUser = (userID:number,firstName:string, lastName:string, userName:string) =>{
     return {
-        type: "SET_USER_DATA",
-        focusedRoomID: roomID,
-        focusedRoomName: roomName
+        type: "SIGN_IN_USER",
+        userID,
+        firstName,
+        lastName,
+        userName,
     }
 }

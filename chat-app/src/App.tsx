@@ -1,36 +1,27 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
-import Home from "./views/Home/Home";
+import {BrowserRouter as Router, Route, Switch, Redirect} from "react-router-dom";
+import Home from "./pages/Home/Home";
+import {useSelector} from "react-redux";
+import {RootState} from "./store/store";
+import {Authentication} from "./pages/Authentication/Authentication";
 
 const App = () => {
+    const {loggedIn} = useSelector((state: RootState) => state.user);
     return (
         <Router>
             <div>
-                {/*<nav>*/}
-                {/*    <ul>*/}
-                {/*        <li>*/}
-                {/*            <Link to="/">Home</Link>*/}
-                {/*        </li>*/}
-                {/*        <li>*/}
-                {/*            <Link to="/about">About</Link>*/}
-                {/*        </li>*/}
-                {/*        <li>*/}
-                {/*            <Link to="/users">Users</Link>*/}
-                {/*        </li>*/}
-                {/*    </ul>*/}
-                {/*</nav>*/}
-
-                {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
                 <Switch>
-                    {/*<Route path="/about">*/}
-                    {/*    <About />*/}
-                    {/*</Route>*/}
-                    {/*<Route path="/users">*/}
-                    {/*    <Users />*/}
-                    {/*</Route>*/}
                     <Route path="/">
-                        <Home />
+                        {loggedIn ? <Home/> : <Authentication/>}
+                    </Route>
+                    <Route path="/home">
+                        {loggedIn ? <Home/> : <Redirect to="/authenticate"/>}
+                    </Route>
+                    <Route path="/authenticate">
+                        {loggedIn ? <Home/> : <Authentication/>}
+                    </Route>
+                    <Route path='*'>
+                        <Redirect to='/'/>
                     </Route>
                 </Switch>
             </div>

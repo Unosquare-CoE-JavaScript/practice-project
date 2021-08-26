@@ -1,47 +1,45 @@
 import styles from "./InitialSection.module.css"
-import React, {useCallback, useEffect, useState} from "react";
+import React, {useEffect, useState, useCallback} from "react";
 import InitialChatSection from "./HomeChat/HomeChatSection";
-import {fetchMessages} from "../../common/API";
 import {Message} from "../../models/Room";
 import LoadingSpinner from "../UI/LoadingSpinner/LoadingSpinner";
 import ErrorSection from "./ChatError/ErrorSection";
 import Chat from "./Chat/Chat";
+import {useHttp} from "../../hooks/use-http";
+import {RequestConfig} from "../../models/RequestConfig";
+import {messagesList} from "../../dummy-data";
+
+const requestConfig= {
+    url:'http://universities.hipolabs.com/search?country=United+States'
+} as RequestConfig;
 
 const InitialSection: React.FC<{ roomID: number | null, roomName: string | null }> = (props) => {
 
-    const [isLoading, setIsLoading] = useState<boolean>(false);
-    const [error, setError] = useState<null | string>(null);
     const [messages, setMessages] = useState<null | Array<Message>>(null);
 
-    const fetchRoomData = useCallback(async () => {
-        setIsLoading(true);
-        setError(null);
+    const setDataResponse = (responseBody: any) => {
+        //TODO uncomment above line when the endpoints are ready
+        // setMessages(responseBody.messages as Array<Message>);
+        setMessages(messagesList)
+    };
 
-        try {
-            const response = await fetchMessages();
-            setMessages(response);
-        } catch (e) {
-            setError(e.message);
-        }
-        setIsLoading(false);
+    const {isLoading, error, sendRequest: fetchMessages} = useHttp();
 
-    }, [])
+    const fetchData = useCallback( ()=>{
+        fetchMessages(requestConfig, setDataResponse);
+    },[fetchMessages]);
 
     useEffect(() => {
         if (props.roomID && props.roomName) {
-            fetchRoomData().catch(e => setError(e));
+            fetchData();
         }
-    }, [fetchRoomData, props.roomID, props.roomName]);
+    }, [fetchData,props.roomID, props.roomName]);
 
     let content = <InitialChatSection/>;
 
-    if (isLoading) {
-        content = <LoadingSpinner/>;
-    }
+    if (isLoading) content = <LoadingSpinner/>;
 
-    if (error) {
-        content = <ErrorSection message={error} retryFn={fetchRoomData}/>;
-    }
+    if (error) content = <ErrorSection message={error} retryFn={fetchData}/>;
 
     if (props.roomID && props.roomName && !isLoading && error === null && messages !== null) {
         content = <Chat messages={messages} chatTitle={props.roomName}/>;
