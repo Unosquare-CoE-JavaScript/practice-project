@@ -1,6 +1,6 @@
-import { MessageRecipient } from "../../../common/enums/message.recipient";
+import { MessageRecipient } from "../src/common/enums/message.recipient";
 
-export interface MessageAttributes {
+export interface messageDTO {
 	messageId: number;
 	senderId: number;
 	recipient: MessageRecipient;

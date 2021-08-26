@@ -1,5 +1,6 @@
 import { Optional } from 'sequelize';
-import { Table, Model, Column } from 'sequelize-typescript';
+import { Table, Model, Column, DataType } from 'sequelize-typescript';
+import { MessageRecipient } from '../src/common/enums/message.recipient';
 import { MessageAttributes } from '../src/services/repositories/domain/message';
 
 interface MessageCreationAttributes extends Optional<MessageAttributes, 'messageId'> {}
@@ -8,18 +9,18 @@ interface MessageCreationAttributes extends Optional<MessageAttributes, 'message
 export class Message extends Model<MessageAttributes, MessageCreationAttributes> {
 
 	@Column 
-	roomId?: string;
+	senderId!: number;
 
 	@Column 
-	userId!: string;
+	recipientId!: number;
 
-	@Column
-	toUserId?: string;
+	@Column(DataType.ENUM('User', 'Room'))
+	recipient!: MessageRecipient;
 
 	@Column
 	text!: string;
 
 	@Column
-	color!: string;
+	color?: string;
 
 }

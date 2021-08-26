@@ -5,7 +5,8 @@ module.exports = {
     },
     "extends": [
         "eslint:recommended",
-        "plugin:@typescript-eslint/recommended"
+        "plugin:@typescript-eslint/recommended",
+		  "prettier"
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -13,9 +14,11 @@ module.exports = {
         "sourceType": "module"
     },
     "plugins": [
-        "@typescript-eslint"
+        "@typescript-eslint",
+		  "prettier"
     ],
     "rules": {
-        semi:[2, "always"]
+        semi:[2, "always"],
+		  "prettier/prettier": 2
     }
 };

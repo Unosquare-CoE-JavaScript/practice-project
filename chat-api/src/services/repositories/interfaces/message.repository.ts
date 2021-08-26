@@ -1,5 +1,8 @@
+import { messageDTO } from "../../../../DTOs/messageDTO";
 import { Message } from "../../../../models/message";
 
 export interface MessageRepository {
-	findByID(messageID: number): Promise<Message | null>;
+	add(newMessage: messageDTO): Promise<Message | null>;
+	findByUserId(userId: number): Promise<Message[] | null>;
+	findByRoomId(roomId: number): Promise<Message[] | null>;
 }
