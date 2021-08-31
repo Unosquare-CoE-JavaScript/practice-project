@@ -22,7 +22,7 @@ const initialState = {
     firstName: "Hugo",
     lastName: "Aviles",
     userName: "Yes",
-    loggedIn:false,
+    loggedIn: false,
 };
 
 
