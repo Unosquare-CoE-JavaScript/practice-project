@@ -13,4 +13,5 @@ export interface UserAttributes {
 	createdAt: Date;
 	updatedAt: Date;
 	password: string;
+	online: boolean;
 }

@@ -21,6 +21,18 @@ export class SystemUserController extends BaseController {
 		}
 	}
 
+	@route('/allFromUser/:userId')
+	@GET()
+	private async findAllByUserId(req: Request, res: Response) {
+		try {
+			const userId = parseInt(req.params.userId);
+			const messages = await this.messageService.findAllByUserId(userId);
+			res.send(messages);
+		} catch (e) {
+			this.handleException(e, res);
+		}
+	}
+	
 	@route('/user/:userId')
 	@GET()
 	private async findByUserId(req: Request, res: Response) {

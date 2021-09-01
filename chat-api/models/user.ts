@@ -1,5 +1,5 @@
 import { Optional } from 'sequelize';
-import { Table, Model, Column, DataType, Unique } from 'sequelize-typescript';
+import { Table, Model, Column, DataType, Unique, Default } from 'sequelize-typescript';
 import { UserGender } from '../src/common/enums/user.gender';
 import { UserAttributes } from '../src/services/repositories/domain/user';
 
@@ -34,4 +34,8 @@ export class User extends Model<UserAttributes, UserCreationAttributes> {
 
 	@Column
 	password!: string;
+
+	@Default(false)
+	@Column
+	online!: boolean;
 }

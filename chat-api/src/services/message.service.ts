@@ -26,17 +26,24 @@ export class MessageService extends BaseController {
 		return createdMessage;
 	}
 
+	public async findAllByUserId(userID: number): Promise<Message[]> {
+		const messages = await this.messageRepository.findAllByUserId(userID);
+		if (!messages)
+			throw new ApplicationException('No messages found for this user');
+		return messages;
+	}
+	
 	public async findByUserId(userID: number): Promise<Message[]> {
 		const messages = await this.messageRepository.findByUserId(userID);
 		if (!messages)
-			throw new ApplicationException('Not messages found for this user');
+			throw new ApplicationException('No messages found for this user');
 		return messages;
 	}
 
 	public async findByRoomId(roomId: number): Promise<Message[]> {
 		const messages = await this.messageRepository.findByRoomId(roomId);
 		if (!messages)
-			throw new ApplicationException('Not messages found for this room');
+			throw new ApplicationException('No messages found for this room');
 		return messages;
 	}
 }
