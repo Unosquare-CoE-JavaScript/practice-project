@@ -1,9 +1,9 @@
 import queryString from 'query-string';
 
-const getGoogleAuthURL: () => string = function () {
+const getGoogleAuth: () => string = function () {
 	const rootUrl = 'https://accounts.google.com/o/oauth2/v2/auth'
 	const options = {
-		redirect_uri: `${process.env.BASE_URL}api/v${process.env.API_VERSION}/auth/google/`,
+		redirect_uri: `${process.env.BASE_URL}api/v${process.env.API_VERSION}/auth/google/logged`,
 		client_id: process.env.GOOGLE_CLIENT_ID,
 		access_type: 'offline',
 		response_type: 'code',
@@ -17,4 +17,4 @@ const getGoogleAuthURL: () => string = function () {
 	return `${rootUrl}?${queryString.stringify(options)}`
 }
 
-export default getGoogleAuthURL
+export default getGoogleAuth

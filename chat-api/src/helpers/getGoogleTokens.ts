@@ -1,7 +1,7 @@
 import queryString from 'query-string';
 import axios from 'axios';
 
-export default async function getTokens({
+export default async function getGoogleTokens({
 	code,
 	clientId,
 	clientSecret,
@@ -18,16 +18,6 @@ export default async function getTokens({
 	scope: string;
 	id_token: string;
 }> {
-	/*
-	Returns:
-	Promise<{
-		access_token: string;
-		expires_in: Number;
-		refresh_token: string;
-		scope: string;
-		id_token: string;
-	}>
-  */
 	const url = 'https://oauth2.googleapis.com/token';
 	const values = {
 		code,
