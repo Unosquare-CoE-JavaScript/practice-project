@@ -1,41 +1,34 @@
-import { Optional } from 'sequelize';
-import { Table, Model, Column, DataType, Unique, Default } from 'sequelize-typescript';
-import { UserGender } from '../src/common/enums/user.gender';
-import { UserAttributes } from '../src/services/repositories/domain/user';
-
-interface UserCreationAttributes extends Optional<UserAttributes, 'id'> {}
+import { Table, Model, Column, UpdatedAt, CreatedAt } from 'sequelize-typescript';
 
 @Table
-export class User extends Model<UserAttributes, UserCreationAttributes> {
+export class User extends Model {
 	@Column
-	firstName!: string;
+	idUser!: number;
 
 	@Column
-	middleName?: string;
-
-	@Column
-	firstLastName!: string;
-
-	@Column
-	secondLastName?: string;
-
-	@Unique
-	@Column
-	email!: string;
-
-	@Column
-	phoneNumber!: string;
-
-	@Column
-	birthDate!: Date;
-
-	@Column(DataType.ENUM('Male', 'Female', 'Other'))
-	gender!: UserGender;
+	mail: string | undefined;
 
 	@Column
 	password!: string;
 
-	@Default(false)
 	@Column
-	online!: boolean;
+	firstName: string | undefined;
+
+	@Column
+	lastName: string | undefined;
+
+	@Column
+	idUserStatus!: number;
+
+	@Column
+	isOnline!: boolean;
+
+	@UpdatedAt
+	lastLogin!: Date;
+
+	@CreatedAt
+	creationDate!: Date;
+
+	@Column
+	birthDate: Date | undefined;
 }
