@@ -6,7 +6,7 @@ import {UserStatus} from "./userStatus";
 import {UserUser} from "./userUser";
 
 @Table
-export class User extends Model<UserAttributes> {
+export class User extends Model {
 
 	@Column
 	mail!: string;

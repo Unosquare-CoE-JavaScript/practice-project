@@ -1,17 +1,12 @@
 // import { UserGender } from "../src/common/enums/user.gender";
 
 export interface userDTO {
-	id: number;
+	mail: string;
 	firstName: string;
-	middleName: string | null;
-	firstLastName: string;
-	secondLastName: string | null;
-	email: string;
-	phoneNumber: string;
+	lastName: string;
+	isOnline: boolean;
 	birthDate: Date;
-	// gender: UserGender;
-	createdAt: Date;
-	updatedAt: Date;
+	lastLogin: Date;
+	creationDate: Date;
 	password: string;
-	online: boolean;
 }
