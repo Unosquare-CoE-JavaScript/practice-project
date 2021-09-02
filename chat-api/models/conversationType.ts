@@ -1,4 +1,5 @@
-import { Column, Model, Table } from "sequelize-typescript";
+import {Column, HasMany, Model, Table} from "sequelize-typescript";
+import {Conversation} from "./conversation";
 
 @Table
 export class ConversationType extends Model {
@@ -10,4 +11,7 @@ export class ConversationType extends Model {
     
     @Column
     description!: string;
+
+    @HasMany(() => Conversation)
+    conversations!: Conversation[]
 }

@@ -1,6 +1,6 @@
 import { Op } from 'sequelize';
 import { Message } from '../../../../models/message';
-import { messageDTO } from '../../../../DTOs/messageDTO';
+import { messageDTO } from '../../../dtos/messageDTO';
 import { MessageRepository } from '../interfaces/message.repository';
 
 export class MessageSequelizeRepository implements MessageRepository {

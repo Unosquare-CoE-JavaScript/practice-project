@@ -1,4 +1,4 @@
-import { userDTO } from '../../../../DTOs/userDTO';
+import { userDTO } from '../../../dtos/userDTO';
 import { User } from '../../../../models/user';
 
 export interface UserRepository {

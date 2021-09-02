@@ -2,7 +2,7 @@ import { GET, POST, route } from 'awilix-express';
 import { BaseController } from '../common/controllers/base.controller';
 import { UserService } from '../services/user.service';
 import { Request, Response } from 'express';
-import { userDTO } from '../../DTOs/userDTO';
+import { userDTO } from '../dtos/userDTO';
 import jwt, { Secret } from 'jsonwebtoken';
 
 @route(`/api/v${process.env.API_VERSION}/users`)

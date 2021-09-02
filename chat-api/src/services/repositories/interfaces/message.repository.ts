@@ -1,4 +1,4 @@
-import { messageDTO } from "../../../../DTOs/messageDTO";
+import { messageDTO } from "../../../dtos/messageDTO";
 import { Message } from "../../../../models/message";
 
 export interface MessageRepository {

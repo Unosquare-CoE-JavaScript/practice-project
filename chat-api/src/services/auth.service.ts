@@ -1,4 +1,4 @@
-import { userDTO } from '../../DTOs/userDTO';
+import { userDTO } from '../dtos/userDTO';
 import { BaseController } from '../common/controllers/base.controller';
 import { ApplicationException } from '../common/exceptions/application.exception';
 import { UserRepository } from './repositories/interfaces/user.repository';
