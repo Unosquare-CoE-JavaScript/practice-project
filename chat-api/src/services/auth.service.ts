@@ -67,21 +67,38 @@ export class AuthService extends BaseController {
 		const access_token = await getGithubTokens(code);
 
 		const githubUser = await axios
-			.get(
-				`https://api.github.com/user`,
-				{
-					headers: {
-						Authorization: `token ${access_token}`,
-					},
-				}
-			)
+			.get(`https://api.github.com/user`, {
+				headers: {
+					Authorization: `token ${access_token}`,
+				},
+			})
 			.then((res) => res.data)
 			.catch((error) => {
 				console.error(`Error while signing user with google`);
 				throw new Error(error.message);
 			});
 
-		const { login, name, email } = githubUser;
+		// console.log('\tgithubUser: ', githubUser);
+
+		let { login, email } = githubUser;
+
+		if (!email) {
+			let emails = await axios
+				.get(`https://api.github.com/user/emails`, {
+					headers: {
+						Authorization: `token ${access_token}`,
+					},
+				})
+				.then((res) => res.data)
+				.catch((error) => {
+					console.error(`Error while retrieving github emails`);
+					throw new Error(error.message);
+				});
+
+			email = emails.find(
+				(email: { primary: boolean }) => email.primary
+			).email;
+		}
 		// const user = await this.userRepository.findByEmail(email);
 
 		// if (!user) {
@@ -108,7 +125,10 @@ export class AuthService extends BaseController {
 		// const token = jwt.sign(googleUser, process.env.jwt_secret_key as Secret);
 		// return token;
 
-		const token = jwt.sign({login, name, email}, process.env.jwt_secret_key as Secret);
+		const token = jwt.sign(
+			{ login, email },
+			process.env.jwt_secret_key as Secret
+		);
 		return token;
 	}
 }
