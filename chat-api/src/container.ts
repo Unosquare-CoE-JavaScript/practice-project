@@ -4,7 +4,7 @@ import { scopePerRequest } from 'awilix-express';
 
 import { UserSequelizeRepository } from './services/repositories/impl/user.repository';
 import { MessageSequelizeRepository } from './services/repositories/impl/message.repository';
-import { RoomSequelizeRepository } from './services/repositories/impl/room.repository';
+// import { RoomSequelizeRepository } from './services/repositories/impl/room.repository';
 
 import { UserService } from './services/user.service';
 import { AuthService } from './services/auth.service';
@@ -17,7 +17,7 @@ export default (app: express.Application): void => {
 		// Repositories
 		userRepository: asClass(UserSequelizeRepository).scoped(),
 		messageRepository: asClass(MessageSequelizeRepository).scoped(),
-		roomRepository: asClass(RoomSequelizeRepository).scoped(),
+		// roomRepository: asClass(RoomSequelizeRepository).scoped(),
 
 		// Services
 		userService: asClass(UserService).scoped(),

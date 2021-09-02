@@ -1,6 +1,6 @@
 import { User } from '../../../../models/user';
 import { UserRepository } from '../interfaces/user.repository';
-import { userDTO } from '../../../../DTOs/userDTO';
+import { userDTO } from '../../../dtos/userDTO';
 import { ApplicationException } from '../../../common/exceptions/application.exception';
 
 export class UserSequelizeRepository implements UserRepository {

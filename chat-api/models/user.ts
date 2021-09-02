@@ -1,22 +1,26 @@
-import { Table, Model, Column, UpdatedAt, CreatedAt } from 'sequelize-typescript';
+import {UserAttributes} from "../src/services/repositories/domain/User";
+import {Table, Model, Column, UpdatedAt, CreatedAt, HasMany, ForeignKey} from 'sequelize-typescript';
+import {Conversation} from "./conversation";
+import {Message} from "./message";
+import {UserStatus} from "./userStatus";
+import {UserUser} from "./userUser";
 
 @Table
-export class User extends Model {
-	@Column
-	idUser!: number;
+export class User extends Model<UserAttributes> {
 
 	@Column
-	mail: string | undefined;
+	mail!: string;
 
 	@Column
 	password!: string;
 
 	@Column
-	firstName: string | undefined;
+	firstName!: string;
 
 	@Column
-	lastName: string | undefined;
+	lastName!: string;
 
+	@ForeignKey(()=>UserStatus)
 	@Column
 	idUserStatus!: number;
 
@@ -30,5 +34,15 @@ export class User extends Model {
 	creationDate!: Date;
 
 	@Column
-	birthDate: Date | undefined;
+	birthDate?: Date;
+
+	@HasMany(() => Conversation)
+	conversations!: Conversation[]
+
+	@HasMany(() => Message)
+	messages!: Message[]
+
+	@HasMany(() => UserUser)
+	contacts!: UserUser[]
+
 }

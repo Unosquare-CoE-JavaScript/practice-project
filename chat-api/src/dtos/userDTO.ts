@@ -1,4 +1,4 @@
-import { UserGender } from "../src/common/enums/user.gender";
+// import { UserGender } from "../src/common/enums/user.gender";
 
 export interface userDTO {
 	id: number;
@@ -9,7 +9,7 @@ export interface userDTO {
 	email: string;
 	phoneNumber: string;
 	birthDate: Date;
-	gender: UserGender;
+	// gender: UserGender;
 	createdAt: Date;
 	updatedAt: Date;
 	password: string;

@@ -33,8 +33,11 @@
     "typescript": "^4.3.5"
   },
   "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
     "@types/bluebird": "^3.5.36",
     "@types/cls-hooked": "^4.3.3",
+    "@types/cookie-parser": "^1.4.2",
+    "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",
     "@types/express-jwt": "^6.0.2",
     "@types/jsonwebtoken": "^8.5.5",

@@ -11,9 +11,11 @@ dotenv.config({
 import express = require('express');
 import { loadControllers } from 'awilix-express';
 import loadContainer from './container';
-import { sequelize } from './common/persistence/sequelize.persistence';
-const cookieParser = require('cookie-parser');
-const cors = require('cors');
+// import { sequelize } from './common/persistence/sequelize.persistence';
+import {sequelize} from "../models";
+
+import cookieParser from 'cookie-parser';
+import cors from 'cors';
 
 // import jwt = require('express-jwt');
 
@@ -49,8 +51,8 @@ loadContainer(app);
 app.use(loadControllers('controllers/*.ts', { cwd: __dirname }));
 
 //Sync Sequelize Models
-(async () => {
-	await sequelize.sync({ force: true });
-})();
+// (async () => {
+// 	await sequelize.sync({ force: true });
+// })();
 
 export { app };

@@ -1,19 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ac9fd50e-f860-4d8d-a749-1b66272d6f61" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/chat-api.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="ac9fd50e-f860-4d8d-a749-1b66272d6f61" name="Changes" comment="DB Working | Pending Repositories">
+      <change afterPath="$PROJECT_DIR$/models/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/repositories/domain/User.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DTOs/messageDTO.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/dtos/messageDTO.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DTOs/userDTO.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/dtos/userDTO.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/development.env" beforeDir="false" afterPath="$PROJECT_DIR$/config/development.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/conversation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/models/conversation.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/conversationStatus.ts" beforeDir="false" afterPath="$PROJECT_DIR$/models/conversationStatus.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/conversationType.ts" beforeDir="false" afterPath="$PROJECT_DIR$/models/conversationType.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/message.ts" beforeDir="false" afterPath="$PROJECT_DIR$/models/message.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/messageStatus.ts" beforeDir="false" afterPath="$PROJECT_DIR$/models/messageStatus.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/models/user.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/userStatus.ts" beforeDir="false" afterPath="$PROJECT_DIR$/models/userStatus.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/userUser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/models/userUser.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/persistence/sequelize.persistence.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/persistence/sequelize.persistence.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/container.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/container.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/message.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/message.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/user.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/auth.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/message.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/message.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/repositories/impl/message.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/repositories/impl/message.repository.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/repositories/impl/room.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/repositories/impl/room.repository.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/repositories/impl/user.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/repositories/impl/user.repository.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/repositories/interfaces/message.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/repositories/interfaces/message.repository.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/repositories/interfaces/user.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/repositories/interfaces/user.repository.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/user.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="BE-NodeJS" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1wYIr1AUwVMScaPQCcsllz59Erf" />
@@ -33,8 +74,14 @@
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/dtos" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -45,11 +92,17 @@
       <option name="presentableId" value="Default" />
       <updated>1628629290034</updated>
       <workItem from="1628629291347" duration="4606000" />
+      <workItem from="1630595626099" duration="14903000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/models/index.js" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -61,8 +114,11 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="DB Working | Pending Repositories" />
+    <option name="LAST_COMMIT_MESSAGE" value="DB Working | Pending Repositories" />
   </component>
 </project>

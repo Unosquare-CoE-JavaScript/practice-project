@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import { GET, POST, route } from 'awilix-express';
 import { BaseController } from '../common/controllers/base.controller';
 import { MessageService } from '../services/message.service';
-import { messageDTO } from '../../DTOs/messageDTO';
+import { messageDTO } from '../dtos/messageDTO';
 
 @route(`/api/v${process.env.API_VERSION}/messages`)
 export class SystemUserController extends BaseController {
