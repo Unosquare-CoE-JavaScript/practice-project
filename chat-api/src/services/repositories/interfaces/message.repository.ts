@@ -1,5 +1,5 @@
 import { messageDTO } from "../../../dtos/messageDTO";
-import { Message } from "../../../../models/message";
+import Message from "../../../../models/message.model";
 
 export interface MessageRepository {
 	add(newMessage: messageDTO): Promise<Message | null>;

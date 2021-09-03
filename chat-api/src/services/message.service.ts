@@ -1,5 +1,5 @@
 import { messageDTO } from '../dtos/messageDTO';
-import { Message } from '../../models/message';
+import Message from '../../models/message.model';
 import { BaseController } from '../common/controllers/base.controller';
 import { ApplicationException } from '../common/exceptions/application.exception';
 import { MessageRepository } from './repositories/interfaces/message.repository';
@@ -10,13 +10,12 @@ export class MessageService extends BaseController {
 	}
 
 	public async add(body: messageDTO): Promise<Message> {
-		const { senderId, recipient, recipientId, text, color } = body;
+		const { idSender, idConversation, message, idMessageStatus } = body;
 		const newMessage = {
-			senderId,
-			recipient,
-			recipientId,
-			text,
-			color,
+			idSender,
+			idConversation,
+			message,
+			idMessageStatus
 		};
 		const createdMessage = await this.messageRepository.add(
 			newMessage as messageDTO
@@ -32,18 +31,11 @@ export class MessageService extends BaseController {
 			throw new ApplicationException('No messages found for this user');
 		return messages;
 	}
-	
+
 	public async findByUserId(userID: number): Promise<Message[]> {
 		const messages = await this.messageRepository.findByUserId(userID);
 		if (!messages)
 			throw new ApplicationException('No messages found for this user');
-		return messages;
-	}
-
-	public async findByRoomId(roomId: number): Promise<Message[]> {
-		const messages = await this.messageRepository.findByRoomId(roomId);
-		if (!messages)
-			throw new ApplicationException('No messages found for this room');
 		return messages;
 	}
 }

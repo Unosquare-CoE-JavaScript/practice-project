@@ -1,4 +1,4 @@
-import { User } from '../../../../models/user';
+import User  from '../../../../models/user.model';
 import { UserRepository } from '../interfaces/user.repository';
 import { userDTO } from '../../../dtos/userDTO';
 import { ApplicationException } from '../../../common/exceptions/application.exception';
@@ -18,13 +18,14 @@ export class UserSequelizeRepository implements UserRepository {
 				return result;
 			})
 			.catch((err) => {
-				const { errors } = err;
-				const duplicatedEmail = errors.some(
-					(err: { message: string }) =>
-						err.message === 'users.email must be unique'
-				);
-				console.log(duplicatedEmail);
-				throw new ApplicationException('The provided email is already in use.');
+				// const { errors } = err;
+				// const duplicatedEmail = errors.some(
+				// 	(err: { message: string }) =>
+				// 		err.message === 'users.email must be unique'
+				// );
+				// console.log(duplicatedEmail);
+				console.log(err);
+				throw new ApplicationException(err);
 			});
 	}
 }

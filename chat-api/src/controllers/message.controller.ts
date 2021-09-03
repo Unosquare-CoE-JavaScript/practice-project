@@ -4,7 +4,7 @@ import { BaseController } from '../common/controllers/base.controller';
 import { MessageService } from '../services/message.service';
 import { messageDTO } from '../dtos/messageDTO';
 
-@route(`/api/v${process.env.API_VERSION}/messages`)
+@route(`/api/v${process.env.API_VERSION}/message`)
 export class SystemUserController extends BaseController {
 	constructor(private readonly messageService: MessageService) {
 		super();
@@ -15,7 +15,7 @@ export class SystemUserController extends BaseController {
 	private async add(req: Request, res: Response) {
 		try {
 			const newMessage = await this.messageService.add(req.body as messageDTO);
-			res.send({ createdMessage: newMessage });
+			res.send({ newMessage: newMessage });
 		} catch (e) {
 			this.handleException(e, res);
 		}
@@ -39,18 +39,6 @@ export class SystemUserController extends BaseController {
 		try {
 			const userId = parseInt(req.params.userId);
 			const messages = await this.messageService.findByUserId(userId);
-			res.send(messages);
-		} catch (e) {
-			this.handleException(e, res);
-		}
-	}
-
-	@route('/room/:roomId')
-	@GET()
-	private async findByRoomId(req: Request, res: Response) {
-		try {
-			const roomId = parseInt(req.params.roomId);
-			const messages = await this.messageService.findByRoomId(roomId);
 			res.send(messages);
 		} catch (e) {
 			this.handleException(e, res);
