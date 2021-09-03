@@ -1,5 +1,5 @@
 import { Op } from 'sequelize';
-import { Message } from '../../../../models/message';
+import Message from '../../../../models/message.model';
 import { messageDTO } from '../../../dtos/messageDTO';
 import { MessageRepository } from '../interfaces/message.repository';
 

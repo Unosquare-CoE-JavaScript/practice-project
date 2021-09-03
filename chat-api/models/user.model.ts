@@ -1,12 +1,15 @@
-import {UserAttributes} from "../src/services/repositories/domain/User";
-import {Table, Model, Column, UpdatedAt, CreatedAt, HasMany, ForeignKey} from 'sequelize-typescript';
-import {Conversation} from "./conversation";
-import {Message} from "./message";
-import {UserStatus} from "./userStatus";
-import {UserUser} from "./userUser";
+import { Table, Model, Column, UpdatedAt, CreatedAt, HasMany, ForeignKey, AutoIncrement, PrimaryKey } from 'sequelize-typescript';
+import Conversation from "./conversation.model";
+import Message from "./message.model";
+import UserStatus from "./userStatus.model";
+import UserUser from "./userUser.model";
 
 @Table
-export class User extends Model {
+export default class User extends Model {
+	@PrimaryKey
+	@AutoIncrement
+	@Column
+	idUser!: number;
 
 	@Column
 	mail!: string;

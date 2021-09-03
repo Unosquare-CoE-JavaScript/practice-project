@@ -5,22 +5,10 @@ import { Request, Response } from 'express';
 import { userDTO } from '../dtos/userDTO';
 import jwt, { Secret } from 'jsonwebtoken';
 
-@route(`/api/v${process.env.API_VERSION}/users`)
+@route(`/api/v${process.env.API_VERSION}/user`)
 export class SystemUserController extends BaseController {
 	constructor(private readonly userService: UserService) {
 		super();
-	}
-
-	@route('/find/:id')
-	@GET()
-	private async find(req: Request, res: Response) {
-		try {
-			const id = parseInt(req.params.id);
-			const user = await this.userService.findByID(id);
-			res.send(user);
-		} catch (e) {
-			this.handleException(e, res);
-		}
 	}
 
 	@route('/add')
@@ -28,7 +16,19 @@ export class SystemUserController extends BaseController {
 	private async add(req: Request, res: Response) {
 		try {
 			const newUser = await this.userService.add(req.body as userDTO);
-			res.send({ createdUser: newUser });
+			res.send({ newUser: newUser });
+		} catch (e) {
+			this.handleException(e, res);
+		}
+	}
+	
+	@route('/find/:id')
+	@GET()
+	private async find(req: Request, res: Response) {
+		try {
+			const id = parseInt(req.params.id);
+			const user = await this.userService.findByID(id);
+			res.send(user);
 		} catch (e) {
 			this.handleException(e, res);
 		}
